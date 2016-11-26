@@ -4,33 +4,6 @@ Rails.application.routes.draw do
     resources :rentals
   end
 
-  namespace :v1 do
-  get 'rentals/index'
-  end
-
-  namespace :v1 do
-  get 'rentals/show'
-  end
-
-  namespace :v1 do
-  get 'rentals/new'
-  end
-
-  namespace :v1 do
-  get 'rentals/edit'
-  end
-
-  namespace :v1 do
-  get 'rentals/create'
-  end
-
-  namespace :v1 do
-  get 'rentals/update'
-  end
-
-  namespace :v1 do
-  get 'rentals/destroy'
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
