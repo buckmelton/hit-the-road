@@ -1,6 +1,6 @@
 class V1::RentalsController < ApplicationController
 
-  before_action :set_playdate, only: [:show, :update, :destroy]
+  before_action :set_rental, only: [:show, :update, :destroy]
 
   def index
     render json: Rental.all
