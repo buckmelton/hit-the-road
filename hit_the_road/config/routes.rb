@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  namespace :v1 do
+    resources :rentals
+  end
+
+  root 'v1/rentals#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,7 +62,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  namespace :v1 do
-    resources :rentals
-  end
 end
