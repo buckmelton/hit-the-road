@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import AppHeader from './AppHeader';
+import RentalsMap from './RentalsMap';
+import RentalListings from './RentalListings';
+import AppFooter from './AppFooter';
 import '../css/App.css';
 import '../css/normalize.css';
 import '../css/skeleton.css';
@@ -8,13 +11,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AppHeader />
+        <RentalsMap />
+        <RentalListings />
+        <AppFooter />
       </div>
     );
   }
