@@ -1,25 +1,40 @@
-import React, { Component } from 'react';
-// import GoogleApiComponent from 'google-maps-react';
-import '../css/App.css';
-import '../css/normalize.css';
-import '../css/skeleton.css';
+/* global google */
+import {
+  default as React,
+  Component,
+} from "react";
 
-// Google Maps API key: AIzaSyCFwE9ezzuQGddycwRrZ1K3BvRzFVQGvvg
-const __GAPI_KEY__ = "AIzaSyCFwE9ezzuQGddycwRrZ1K3BvRzFVQGvvg";
+import {
+  withGoogleMap,
+  GoogleMap,
+} from "react-google-maps";
 
-class RentalsMap extends Component {
+/*
+ * Sample From: https://developers.google.com/maps/documentation/javascript/examples/map-simple
+ */
+const SimpleMapExampleGoogleMap = withGoogleMap(props => (
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  />
+));
+
+/*
+ * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
+ */
+export default class RentalsMap extends Component {
+
   render() {
-    if (!this.props.loaded) {
-      return <div>Loading...</div>
-    }
     return (
-      <div>Map will go here</div>
+      <p>Rentals Map Goes Here</p>
+      // <SimpleMapExampleGoogleMap
+      //   containerElement={
+      //     <div style={{ height: `100%` }} />
+      //   }
+      //   mapElement={
+      //     <div style={{ height: `100%` }} />
+      //   }
+      // />
     );
   }
 }
-
-export default RentalsMap;
-
-// export default GoogleApiComponent({
-//   apiKey: __GAPI_KEY__
-// })(RentalsMap)
