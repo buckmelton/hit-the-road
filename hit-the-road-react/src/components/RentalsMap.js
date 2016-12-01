@@ -1,61 +1,40 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+/* global google */
+import {
+  default as React,
+  Component,
+} from "react";
 
-import Map, {GoogleApiWrapper} from '../../src/index'
+import {
+  withGoogleMap,
+  GoogleMap,
+} from "react-google-maps";
 
-const RentalsMap = React.createClass({
-  getInitialState: function() {
-    return {
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {},
-    }
-  },
+/*
+ * Sample From: https://developers.google.com/maps/documentation/javascript/examples/map-simple
+ */
+const SimpleMapExampleGoogleMap = withGoogleMap(props => (
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  />
+));
 
-  onMapMoved: function(props, map) {
-    const center = map.center;
-  },
+/*
+ * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
+ */
+export default class RentalsMap extends Component {
 
-  onMarkerClick: function(props, marker, e) {
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
-  },
-
-  onInfoWindowClose: function() {
-    this.setState({
-      showingInfoWindow: false,
-      activeMarker: null
-    })
-  },
-
-  onMapClicked: function(props) {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      })
-    }
-  },
-
-  render: function() {
-    if (!this.props.loaded) {
-      return <div>Loading...</div>
-    }
-
+  render() {
     return (
-      <Map google={this.props.google}
-          style={{width: '100%', height: '100%', position: 'relative'}}
-          className={'map'}
-          zoom={14}
-          containerStyle={{}}
-          centerAroundCurrentLocation={true}
-          onClick={this.onMapClicked}
-          onDragend={this.onMapMoved} />
-    )
+      <p>Rentals Map Goes Here</p>
+      // <SimpleMapExampleGoogleMap
+      //   containerElement={
+      //     <div style={{ height: `100%` }} />
+      //   }
+      //   mapElement={
+      //     <div style={{ height: `100%` }} />
+      //   }
+      // />
+    );
   }
-});
-
-export default RentalsMap
+}
