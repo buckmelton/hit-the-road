@@ -7,4 +7,7 @@ The tech stack is currently: PostgreSQL, Ruby on Rails back-end API, React front
 ## Sequence
 ### Wireframes - create in Balsamiq
 ### Database Schema - create in SchemaDesigner
-### Generate Ruby App
+### Create Ruby App skeleton
+### Create Listing model and table
+### Create React skeleton
+### Pull in Google Maps API
