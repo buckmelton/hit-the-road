@@ -8,4 +8,8 @@ The tech stack is currently: PostgreSQL, Ruby on Rails back-end API, React front
 ### Wireframes - create in Balsamiq
 ### Database Schema - create in SchemaDesigner
 ### Generate Ruby API Server framework
-Add v1 namespace and 'rentals' resource, verified routes
+### Add v1 namespace and 'rentals' resource, verified routes
+### Create 'Rentals' model and table, populate with test data
+### Verify working API pulling JSON data out
+### Create React skeleton, stub initial components and styling
+### Pull Google Maps API into React
