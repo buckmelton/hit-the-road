@@ -7,4 +7,5 @@ The tech stack is currently: PostgreSQL, Ruby on Rails back-end API, React front
 ## Sequence
 ### Wireframes - create in Balsamiq
 ### Database Schema - create in SchemaDesigner
-### Generate Ruby App
+### Generate Ruby API Server framework
+Add v1 namespace and 'rentals' resource, verified routes
