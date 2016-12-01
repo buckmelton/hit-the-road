@@ -12,8 +12,14 @@ class App extends Component {
     return (
       <div className="container">
         <AppHeader />
-        <RentalsMap />
-        <RentalListings />
+        <div className="row">
+          <div className="one-half column">
+            <RentalsMap />
+          </div>
+          <div className="one-half column">
+            <RentalListings />
+          </div>
+        </div>
         <AppFooter />
       </div>
     );

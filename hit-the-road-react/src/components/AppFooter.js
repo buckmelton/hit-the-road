@@ -6,7 +6,9 @@ import '../css/skeleton.css';
 class AppFooter extends Component {
   render() {
     return (
-      <p>App Footer Goes Here</p>
+      <div className="htr-footer">
+        <p>About - Press - Contact Us - FAQ - Privacy Policy - Careers - Popular Destinations - Blog</p>
+      </div>
     );
   }
 }
