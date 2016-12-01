@@ -1,25 +1,61 @@
-import React, { Component } from 'react';
-// import GoogleApiComponent from 'google-maps-react';
-import '../css/App.css';
-import '../css/normalize.css';
-import '../css/skeleton.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-// Google Maps API key: AIzaSyCFwE9ezzuQGddycwRrZ1K3BvRzFVQGvvg
-const __GAPI_KEY__ = "AIzaSyCFwE9ezzuQGddycwRrZ1K3BvRzFVQGvvg";
+import Map, {GoogleApiWrapper} from '../../src/index'
 
-class RentalsMap extends Component {
-  render() {
+const RentalsMap = React.createClass({
+  getInitialState: function() {
+    return {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+    }
+  },
+
+  onMapMoved: function(props, map) {
+    const center = map.center;
+  },
+
+  onMarkerClick: function(props, marker, e) {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  },
+
+  onInfoWindowClose: function() {
+    this.setState({
+      showingInfoWindow: false,
+      activeMarker: null
+    })
+  },
+
+  onMapClicked: function(props) {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  },
+
+  render: function() {
     if (!this.props.loaded) {
       return <div>Loading...</div>
     }
+
     return (
-      <div>Map will go here</div>
-    );
+      <Map google={this.props.google}
+          style={{width: '100%', height: '100%', position: 'relative'}}
+          className={'map'}
+          zoom={14}
+          containerStyle={{}}
+          centerAroundCurrentLocation={true}
+          onClick={this.onMapClicked}
+          onDragend={this.onMapMoved} />
+    )
   }
-}
+});
 
-export default RentalsMap;
-
-// export default GoogleApiComponent({
-//   apiKey: __GAPI_KEY__
-// })(RentalsMap)
+export default RentalsMap
